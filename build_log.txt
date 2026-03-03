@@ -1,0 +1,29 @@
+
+> frontend@0.0.0 build
+> vite build
+
+[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32m✓[39m 2712 modules transformed.
+[31m✗[39m Build failed in 6.08s
+[31merror during build:
+[31msrc/components/About.jsx (8:25): "SiVisualstudiocode" is not exported by "node_modules/react-icons/si/index.mjs", imported by "src/components/About.jsx".[31m
+file: [36mC:/Users/K YASHWANTH KUMAR/OneDrive/Desktop/portfolio/frontend/src/components/About.jsx:8:25[31m
+[33m
+ 6:      SiCplusplus, SiJavascript, SiC, SiPhp, SiPython,
+ 7:      SiHtml5, SiNodedotjs, SiReact,
+ 8:      SiMysql, SiMongodb, SiVisualstudiocode, SiXampp
+                             ^
+ 9: } from 'react-icons/si';
+10: import MagneticButton from './MagneticButton';
+[31m
+    at getRollupError (file:///C:/Users/K%20YASHWANTH%20KUMAR/OneDrive/Desktop/portfolio/frontend/node_modules/rollup/dist/es/shared/parseAst.js:402:41)
+    at error (file:///C:/Users/K%20YASHWANTH%20KUMAR/OneDrive/Desktop/portfolio/frontend/node_modules/rollup/dist/es/shared/parseAst.js:398:42)
+    at Module.error (file:///C:/Users/K%20YASHWANTH%20KUMAR/OneDrive/Desktop/portfolio/frontend/node_modules/rollup/dist/es/shared/node-entry.js:17040:16)
+    at Module.traceVariable (file:///C:/Users/K%20YASHWANTH%20KUMAR/OneDrive/Desktop/portfolio/frontend/node_modules/rollup/dist/es/shared/node-entry.js:17452:29)
+    at ModuleScope.findVariable (file:///C:/Users/K%20YASHWANTH%20KUMAR/OneDrive/Desktop/portfolio/frontend/node_modules/rollup/dist/es/shared/node-entry.js:15070:39)
+    at Identifier.bind (file:///C:/Users/K%20YASHWANTH%20KUMAR/OneDrive/Desktop/portfolio/frontend/node_modules/rollup/dist/es/shared/node-entry.js:5447:40)
+    at CallExpression.bind (file:///C:/Users/K%20YASHWANTH%20KUMAR/OneDrive/Desktop/portfolio/frontend/node_modules/rollup/dist/es/shared/node-entry.js:2825:28)
+    at CallExpression.bind (file:///C:/Users/K%20YASHWANTH%20KUMAR/OneDrive/Desktop/portfolio/frontend/node_modules/rollup/dist/es/shared/node-entry.js:12179:15)
+    at Property.bind (file:///C:/Users/K%20YASHWANTH%20KUMAR/OneDrive/Desktop/portfolio/frontend/node_modules/rollup/dist/es/shared/node-entry.js:2829:23)
+    at ObjectExpression.bind (file:///C:/Users/K%20YASHWANTH%20KUMAR/OneDrive/Desktop/portfolio/frontend/node_modules/rollup/dist/es/shared/node-entry.js:2825:28)[39m

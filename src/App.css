@@ -1,42 +1,114 @@
+/* ===== Global Styles ===== */
+html {
+  scroll-behavior: smooth;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  min-height: 100vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* ===== Smooth Theme Transition ===== */
+body, #root {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ===== Theme CSS Variables ===== */
+:root,
+[data-theme="light"],
+.light {
+  --text-primary: #0f172a;      /* Slate 900 for headings/logo */
+  --text-secondary: #475569;    /* Slate 600 for body text/tagline */
+  --text-muted: #64748b;        /* Slate 500 for nav links/muted */
+  --border-subtle: #cbd5e1;      /* Slate 300 for ghost borders */
+  --bg-primary: #ffffff;        /* Pure white background */
+  
+  --bg-section: #F8FAFC;
+  --bg-surface: rgba(255, 255, 255, 0.85);
+  --text-tertiary: #64748b;
+  --text-button: #334155;
+  --border-button: #cbd5e1;
+  --bg-button: #f8fafc;
+  --accent-blue: #3B82F6;
+  --accent-purple: #8B5CF6;
+  --accent-primary: #4F46E5;
+  --accent-cyan: #06B6D4;
+  --border-color: rgba(0, 0, 0, 0.1);
+  
+  /* Bulletproof Theme Layers */
+  --hero-grad-start: #EEF2FF;
+  --hero-grad-mid: #F8FAFC;
+  --hero-grad-end: #FFFFFF;
+  --dot-grid-opacity: 0.05;
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --nav-border: rgba(226, 232, 240, 0.6);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+[data-theme="dark"],
+.dark {
+  --text-primary: #E5E7EB;       /* EXACT COPY: Current Slate 200 */
+  --text-secondary: #9CA3AF;     /* EXACT COPY: Current Slate 400 */
+  --text-muted: #D1D5DB;         /* EXACT COPY: Current Slate 300 */
+  --border-subtle: rgba(255, 255, 255, 0.15); /* EXACT COPY: Current White 15% */
+  --bg-primary: #0B0F1A;         /* EXACT COPY: Current deep dark */
+  
+  --bg-section: #111827;
+  --bg-surface: rgba(255, 255, 255, 0.05);
+  --text-tertiary: #D1D5DB;
+  --text-button: #E5E7EB;
+  --border-button: rgba(255, 255, 255, 0.15);
+  --bg-button: rgba(255, 255, 255, 0.05);
+  --accent-blue: #3B82F6;
+  --accent-purple: #8B5CF6;
+  --accent-primary: #4F46E5;
+  --accent-cyan: #06B6D4;
+  --border-color: rgba(255, 255, 255, 0.05);
+  
+  /* Bulletproof Theme Layers */
+  --hero-grad-start: transparent;
+  --hero-grad-mid: transparent;
+  --hero-grad-end: transparent;
+  --dot-grid-opacity: 0;
+  --nav-bg: rgba(11, 15, 26, 0.8);
+  --nav-border: rgba(255, 255, 255, 0.1);
 }
 
-.card {
-  padding: 2em;
+/* ===== Typing Cursor ===== */
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
-.read-the-docs {
-  color: #888;
+.typing-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  background: var(--accent-primary);
+  margin-left: 4px;
+  animation: blink-cursor 0.8s step-end infinite;
+  vertical-align: text-bottom;
+}
+
+/* ===== Code Block Styling ===== */
+.code-block {
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.code-block .keyword { color: #c792ea; }
+.code-block .string { color: #c3e88d; }
+.code-block .annotation { color: #ffcb6b; }
+.code-block .comment { color: #546e7a; font-style: italic; }
+.code-block .method { color: #82aaff; }
+.code-block .type { color: #f78c6c; }
+
+/* ===== Selection ===== */
+::selection {
+  background: rgba(79, 70, 229, 0.3);
+  color: white;
 }

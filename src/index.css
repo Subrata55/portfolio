@@ -4,8 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-background text-gray-200 antialiased overflow-x-hidden;
-    /* Custom scrollbar */
+    @apply bg-background text-[var(--text-primary)] antialiased overflow-x-hidden font-sans;
     &::-webkit-scrollbar {
       width: 8px;
     }
@@ -15,6 +14,23 @@
     &::-webkit-scrollbar-thumb {
       @apply bg-surface-hover rounded-full;
     }
+  }
+
+  /* Light theme overrides */
+  .light body,
+  .light #root {
+    @apply text-gray-900;
+  }
+  .light .glass-panel {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(0, 0, 0, 0.06);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 4px 16px rgba(79,70,229,0.04);
+  }
+  .light .glass-panel:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 8px 24px rgba(79,70,229,0.06);
+  }
+  .light ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.12);
   }
 }
 
@@ -34,7 +50,21 @@
   }
   
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-blue via-accent-primary to-accent-purple;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-indigo via-accent-blue to-accent-cyan;
+  }
+
+  .nav-link {
+    @apply relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 h-[2px] w-0 rounded-full transition-all duration-300;
+    background: linear-gradient(to right, #4F46E5, #06B6D4);
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
   }
 
   .glow-border {
@@ -55,5 +85,21 @@
   .glow-border:hover::after {
     opacity: 0.5;
     animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .section-padding {
+    @apply py-24 md:py-32;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold mb-4;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-border text-sm font-medium transition-all duration-300;
+  }
+
+  .badge:hover {
+    @apply border-accent-blue/50 shadow-[0_0_15px_rgba(14,165,233,0.3)];
   }
 }
